@@ -1,0 +1,72 @@
+#Задание1
+numbers = (0, 1090, 7, 21, 17, 337, 22)
+index = numbers.index(337)
+print(index) #5
+
+#Задание2
+numbers = ((0, (9, 2)), (1, (4, 6, 3), (5, 2, 3), 8, 3))
+result = numbers[0][1][1]
+print(result) #2
+
+#Задание3
+countries = ('Russia', 'Argentina', 'Spain', 'Slovakia', 'Canada', 'Slovenia', 'Italy')
+last = countries[-1]
+print(last)
+
+#Задание4
+primes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71)
+print(primes[:6])
+
+#Задание5
+countries = ('Russia', 'Argentina', 'Slovakia', 'Canada', 'Slovenia', 'Italy', 'Spain', 'Ukraine', 'Chile', 'Cameroon')
+print(countries[2:])
+
+#Задание6
+countries = ('Russia', 'Argentina', 'Slovakia', 'Canada', 'Slovenia', 'Italy', 'Spain', 'Ukraine', 'Chile', 'Cameroon')
+print(countries[:-3])
+
+#Задание7
+countries = ('Russia', 'Argentina', 'Slovakia', 'Canada', 'Slovenia', 'Italy', 'Spain', 'Ukraine', 'Chile', 'Cameroon')
+print(countries[3:-2])
+
+#Задание8
+countries = ('Romania', 'Poland', 'Estonia', 'Bulgaria', 'Slovakia', 'Slovenia', 'Hungary')
+number = len(countries)
+print(number)
+
+#Задание9
+numbers = (12.5, 3.1415, 2.718, 9.8, 1.414, 1.1618, 1.324)
+print(min(numbers) + max(numbers))
+
+#Задание10
+countries = ('Russia', 'Argentina', 'Spain', 'Slovakia', 'Canada', 'Slovenia', 'Italy')
+index = countries.index('Slovenia')
+print(index)
+
+#Задание11
+countries = ('Russia', 'Argentina', 'Spain', 'Slovakia', 'Canada', 'Slovenia', 'Italy', 'Spain', 'Ukraine', 'Chile', 'Spain', 'Cameroon')
+number = countries.count('Spain')
+print(number)
+
+#Задание12
+numbers1 = (1, 2, 3)
+numbers2 = (6,)
+numbers3 = (7, 8, 9, 10, 11, 12, 13)
+result = numbers1 * 2 + numbers2 * 9 + numbers3
+print(result)
+
+#Задание13
+city_name = input()
+city_year = int(input())
+city = (city_name, city_year)
+print(city)
+
+#Задание14
+tuples = [(), (), ('',), ('a', 'b'), (), ('a', 'b', 'c'), (1,), (), (), ('d',), ('', ''), ()]
+non_empty_tuples = [t for t in tuples if t]
+print(non_empty_tuples)
+
+#Задание15
+tuples = [(10, 20, 40), (40, 50, 60), (70, 80, 90), (10, 90), (1, 2, 3, 4), (5, 6, 10, 2, 1, 77)]
+new_tuples = [t[:-1] + (100,) for t in tuples]
+print(new_tuples)
