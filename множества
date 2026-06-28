@@ -1,0 +1,102 @@
+#Задание1
+a = 5
+b = 6
+intersection = 2
+
+union = a + b - intersection
+print(union)
+
+#Задание2
+english = 25
+french = 27
+both = 18
+
+total = english + french - both
+print(total)
+
+#Задание3
+total = 67
+params = 47
+economy = 35
+both = 23
+
+at_least_one = params + economy - both
+none = total - at_least_one
+print(none)
+
+#Задание4
+total = 30
+math = 17
+physic = 10
+informatic = 13
+all_three = 3
+math_physic = 5
+physic_informatic = 4
+math_informatiс = 6
+
+at_least_one = math + physic + informatic - math_physic - physic_informatic - math_informatic + all_three
+none = total - at_least_one
+print(none)
+
+#Задание5
+total = 36
+none = 2
+english = 25
+german = 11
+french = 17
+en_ge = 6
+en_fr = 10
+ge_fr = 4
+
+at_least_one = total - none
+all_three = at_least_one - (english + german + french - en_ge - en_fr - ge_fr)
+print(all_three)
+
+#Задание6
+n = int(input())
+m = int(input())
+k = int(input())
+x = int(input())
+y = int(input())
+z = int(input())
+
+only_sea = n - x
+only_village = m - x - y
+only_mountains = k - y
+sea_and_village = x
+village_and_mountains = y
+
+total = only_sea + only_village + only_mountains + sea_and_village + village_and_mountains + z
+print(total)
+
+#Задание7
+n = int(input())
+for i in range(n):
+    word = input().lower()
+    print(len(set(word)))
+
+#Задание8
+n = int(input())
+chars = set()
+for i in range(n):
+    word = input().lower()
+    chars.update(word)
+print(len(chars))
+
+#Задание9
+text = input().lower()
+for i in ".,;:-?!":
+    text = text.replace(i, " ")
+words = text.split()
+print(len(set(words)))
+
+#Задание10
+numbers = input().split()
+seen = set()
+for num in numbers:
+    num = str(int(num))
+    if num in seen:
+        print("YES")
+    else:
+        print("NO")
+        seen.add(num)
