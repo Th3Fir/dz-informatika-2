@@ -1,0 +1,81 @@
+#Задание1
+schedule = {
+    "Понедельник": ["Математика", "Физика", "История"],
+    "Вторник": ["Биология", "Английский язык", "Информатика"]
+}
+schedule["Вторник"].append("Физкультура")
+schedule["Среда"] = ["Химия", "Литература", "Обществознание"]
+
+for day, subjects in schedule.items():
+    print(f"{day}: {', '.join(subjects)}")
+
+#Задание2
+orders = {
+    1001: {"товары": [("Мышь", 2), ("Клавиатура", 1)], "статус": "оформлен"},
+    1002: {"товары": [("Монитор", 1)], "статус": "в обработке"}
+}
+orders[1001]["товары"].append(("Наушники", 1))
+orders[1002]["статус"] = "доставлен"
+orders[1003] = {
+    "товары": [("Флешка", 2), ("Коврик", 1)],
+    "статус": "оформлен"
+}
+
+for order_num, order_data in orders.items():
+    items_str = ", ".join([f"{name} ({qty} шт.)" for name, qty in order_data["товары"]])
+    print(f"Заказ №{order_num}: {items_str} | Статус: {order_data['статус']}")
+
+#Задание3
+results = {
+    "Иванов": {"Математика": 4, "Физика": 5},
+    "Петрова": {"Математика": 3, "Информатика": 5}
+}
+results["Иванов"]["Информатика"] = 4
+results["Петрова"]["Математика"] += 1
+del results["Иванов"]["Физика"]
+
+for student, grades in results.items():
+    grades_str = ", ".join([f"{subject}: {grade}" for subject, grade in grades.items()])
+    print(f"{student}: {grades_str}")
+
+#Задание4
+income = {
+    "Январь": (40000, 5000, 2000),
+    "Февраль": (42000, 6000, 2500)
+}
+income["Март"] = (43000, 5500, 3000)
+salary, part_time, investments = income["Февраль"]
+income["Февраль"] = (45000, part_time, investments)
+
+for month, values in income.items():
+    total = sum(values)
+    salary, part_time, investments = values
+    print(f"{month}: зарплата {salary}, подработка {part_time}, инвестиции {investments} | Итого: {total}")
+
+#Задание5
+participants = {
+    "Смирнов": (15, ["Бег", "Плавание"]),
+    "Кузнецова": (16, ["Гимнастика"])
+}
+participants["Смирнов"][1].append("Фехтование")
+age, sports = participants["Кузнецова"]
+participants["Кузнецова"] = (17, sports)
+participants["Иванов"] = (14, ["Бег", "Прыжки"])
+
+for name, data in participants.items():
+    age, sports = data
+    sports_str = ", ".join(sports) if sports else "Нет видов спорта"
+    print(f"{name} ({age}): {sports_str}")
+
+#Задание6
+shopping_list = {
+    "Продукты": ["Хлеб", "Молоко"],
+    "Хозяйственное": ["Мыло", "Губки"]
+}
+shopping_list["Продукты"].append("Сыр")
+shopping_list["Хозяйственное"].remove("Губки")
+shopping_list["Электроника"] = ["Батарейки", "Лампочка"]
+
+for category, items in shopping_list.items():
+    items_str = ", ".join(items)
+    print(f"{category}: {items_str}")
