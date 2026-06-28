@@ -1,0 +1,89 @@
+import random
+
+#Задание1
+with open(filename, 'r', encoding='utf-8') as file:
+    print(file.read())
+
+#Задание2
+with open(filename, 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    print(lines[-2].rstrip('\n'))
+
+#Задание3
+with open('lines.txt', 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    print(random.choice(lines).rstrip('\n'))
+
+#Задание4
+with open('numbers.txt', 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    print(int(lines[0]) + int(lines[1]))
+
+#Задание5
+with open('nums.txt', 'r', encoding='utf-8') as file:
+    nums = list(map(int, file.read().split()))
+    print(nums[0] * nums[1])
+
+#Задание6
+with open('prices.txt', 'r', encoding='utf-8') as file:
+    total = 0
+    for line in file:
+        name, qty, price = line.strip().split('\t')
+        total += int(qty) * int(price)
+    print(total)
+
+#Задание7
+with open('text.txt', 'r', encoding='utf-8') as file:
+    print(file.read().strip()[::-1])
+
+#Задание8
+with open('data.txt', 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    for line in lines:
+        print(line.rstrip('\n'))
+    for line in reversed(lines):
+        print(line.rstrip('\n'))
+
+#Задание9
+with open('lines2.txt', 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    lines_stripped = [line.rstrip('\n') for line in lines]
+    max_length = max(len(line) for line in lines_stripped)
+    
+    for line in lines_stripped:
+        if len(line) == max_length:
+            print(line)
+
+#Задание10
+with open("numbers.txt", 'r', encoding='utf-8') as file:
+    for line in file:
+        print(sum(map(int, line.split())))
+
+#Задание11
+with open("file.txt", 'r', encoding='utf-8') as file:
+    content = file.read()
+    lines = content.splitlines()
+    
+    line_count = len(lines)
+    word_count = sum(len(line.split()) for line in lines)
+    letter_count = sum(1 for char in content if char.isalpha() and char.isascii())
+    
+    print(f"Количество букв: {letter_count}")
+    print(f"Количество слов: {word_count}")
+    print(f"Количество строк: {line_count}")
+
+#Задание12
+with open("first_names.txt", 'r', encoding='utf-8') as f:
+    names = [line.strip() for line in f if line.strip()]
+with open("last_names.txt", 'r', encoding='utf-8') as f:
+    surnames = [line.strip() for line in f if line.strip()]
+
+for i in range(3):
+    print(f"{random.choice(names)} {random.choice(surnames)}")
+
+#Задание13
+with open("population.txt", 'r', encoding='utf-8') as file:
+    for line in file:
+        country, population = line.strip().split('\t')
+        if country.startswith('G') and int(population) > 500000:
+            print(country)
